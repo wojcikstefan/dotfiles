@@ -1,4 +1,12 @@
 --type-add=ruby=.haml,.rake
 --type-add=css=.less
+--type-add=css=.norm
 --nosql
 --ignore-dir=venv
+--type-add=html=.hbs
+--ignore-dir=closeio/static/js/vendor
+--ignore-dir=closeio/static/js/node_modules
+--ignore-dir=closeio/static/built
+--ignore-dir=closeio/static/js/dist/
+--ignore-dir=node_modules
+--ignore-dir=js/lib/

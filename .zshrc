@@ -4,7 +4,7 @@ export EDITOR=vim
 ZSH=$HOME/.oh-my-zsh
 
 # Look in ~/.oh-my-zsh/themes/
-ZSH_THEME="wedisagree-phil"
+ZSH_THEME="wedisagree"
 
 # Uncomment following line if you want red dots to be displayed while waiting for completion
 COMPLETION_WAITING_DOTS="true"
@@ -32,22 +32,24 @@ alias gitspp='git stash; git pull --rebase; git stash pop'
 alias gitprp='git pull --rebase && git push'
 
 # Shortcuts for starting/stopping various services 
-alias db='mysql -u root -A'
-alias dbstart="sudo /opt/local/share/mysql55/support-files/mysql.server start";
-alias dbstop="sudo /opt/local/share/mysql55/support-files/mysql.server stop";
-alias apachestart="sudo /opt/local/apache2/bin/apachectl start";
-alias apachestop="sudo /opt/local/apache2/bin/apachectl stop";
-alias apacherestart="sudo /opt/local/apache2/bin/apachectl graceful";
-alias memcachestart="memcached -m 24 -p 11211 -d -l 127.0.0.1";
-alias memcachestop="killall memcached";
+alias mysql='/usr/local/mysql/bin/mysql -uroot -A'
+alias mysql_start="/Library/StartupItems/MySQLCOM/MySQLCOM start"
+alias mysql_stop="/Library/StartupItems/MySQLCOM/MySQLCOM stop"
 
 # virtualenv helpers
 alias virtualenv="virtualenv-2.7"
-alias venv="source ./venv/bin/activate"
+alias venv=". venv/bin/activate || . env/bin/activate"
+
+#ack
+alias ack='ack-5.12'
 
 # Python Stuff
-export PYTHONPATH=".:./lib";
+export PYTHONPATH="./lib:.:/Library/Python/2.7/site-packages:$PYTHONPATH";
 alias pipr="pip install -U --exists-action=s -r requirements.txt"
+alias startcelery="./manage.py celery worker -B"
+
+# mtr
+alias mtr="/usr/local/sbin/mtr"
 
 # Ruby RVM
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # This loads RVM into a shell session.
@@ -60,3 +62,12 @@ export CFLAGS="-I/opt/local/include $CFLAGS"
 export LDFLAGS="-L/opt/local/lib $LDFLAGS"
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+PATH=$PATH:/usr/local/mysql/bin/ # add mysql binaries to the path
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
+
+# Don't try to autocomplete the remote branch names (it's super slow otherwise)
+__git_files () { 
+    _wanted files expl 'local files' _files     
+}
