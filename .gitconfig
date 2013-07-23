@@ -41,6 +41,7 @@
     d = diff
     dc = diff --cached
     rb = rebase
+    rbpus = !"git pull --rebase && git pus"
     br = branch
     co = "!f(){ git checkout \"$@\" && git submodule update --init --recursive --quiet; }; f"
     ch = checkout
