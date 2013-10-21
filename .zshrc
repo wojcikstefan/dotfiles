@@ -19,7 +19,7 @@ source $ZSH/oh-my-zsh.sh
 # navigational shortcuts
 alias cdsites="cd ~/Sites";
 # cd up to the root of a git project
-alias cdg='cd $(git rev-parse --show-cdup)'
+alias cdg='cd $(git rev-parse --show-toplevel)'
 
 # hidden files shortcutes
 alias showhiddenfiles="defaults write com.apple.Finder AppleShowAllFiles YES; killall Finder";
@@ -50,6 +50,12 @@ alias startcelery="./manage.py celery worker -B"
 
 # mtr
 alias mtr="/usr/local/sbin/mtr"
+
+# memory and cpu percentage
+alias memcpu="ps -amcwwwxo \"command %mem %cpu\" | grep -v grep | head -13"
+
+# start elasticsearch
+alias startelasticsearch="eval \"ES_HEAP_SIZE=5g `cat /usr/bin/elasticsearch` -f\""
 
 # Ruby RVM
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # This loads RVM into a shell session.
