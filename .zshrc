@@ -55,6 +55,9 @@ alias startcelery="./manage.py celery worker -B"
 # mtr
 alias mtr="/usr/local/sbin/mtr"
 
+# flush DNS cache
+alias flushdns='dscacheutil -flushcache;sudo killall -HUP mDNSResponder'
+
 # memory and cpu percentage
 alias memcpu="ps -amcwwwxo \"command %mem %cpu\" | grep -v grep | head -13"
 
