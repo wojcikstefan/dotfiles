@@ -36,6 +36,10 @@ alias mysql='/usr/local/mysql/bin/mysql -uroot -A'
 alias mysql_start="/Library/StartupItems/MySQLCOM/MySQLCOM start"
 alias mysql_stop="/Library/StartupItems/MySQLCOM/MySQLCOM stop"
 
+# Shortcuts for Close.io
+alias cdcio='cd ~/Repos/closeio/ && venv'
+alias startservices='open ~/start_closeio_services.app'
+
 # virtualenv helpers
 alias virtualenv="virtualenv-2.7"
 alias venv=". venv/bin/activate || . env/bin/activate"
