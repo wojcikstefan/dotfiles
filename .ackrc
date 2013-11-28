@@ -1,6 +1,7 @@
 --type-add=ruby=.haml,.rake
 --type-add=css=.less
 --type-add=css=.norm
+--type-set=puppet=pp
 --nosql
 --ignore-dir=venv
 --type-add=html=.hbs
