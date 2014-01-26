@@ -14,13 +14,14 @@ tell application "iTerm"
     tell myterm
         launch session "Panes"
 
-        tell the last session to write text "mongod -f ~/mongodb/local_rs_conf_0.conf"
+        tell the last session to write text "mongod -f ~/mongodb/local.conf"
+        #tell the last session to write text "mongod -f ~/mongodb/local_rs_conf_0.conf"
 
-        tell application "System Events" to keystroke "d" using command down
-        tell the last session to write text "mongod -f ~/mongodb/local_rs_conf_1.conf"
+        #tell application "System Events" to keystroke "d" using command down
+        #tell the last session to write text "mongod -f ~/mongodb/local_rs_conf_1.conf"
 
-        tell application "System Events" to keystroke "d" using command down
-        tell the last session to write text "mongod -f ~/mongodb/local_rs_conf_2.conf"
+        #tell application "System Events" to keystroke "d" using command down
+        #tell the last session to write text "mongod -f ~/mongodb/local_rs_conf_2.conf"
 
     end tell
 
