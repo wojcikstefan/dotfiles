@@ -40,6 +40,9 @@ alias mysql_stop="/Library/StartupItems/MySQLCOM/MySQLCOM stop"
 alias cdcio='cd ~/Repos/closeio/ && venv'
 alias startservices='open ~/start_closeio_services.app'
 
+# Shortcuts for Sztukonet
+alias cdsz='cd ~/Repos/sztukonet/ && venv'
+
 # virtualenv helpers
 alias virtualenv="virtualenv-2.7"
 alias venv=". venv/bin/activate || . env/bin/activate"
