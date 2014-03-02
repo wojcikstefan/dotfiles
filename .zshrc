@@ -14,22 +14,19 @@ COMPLETION_WAITING_DOTS="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git osx terminalapp python)
 
+# Enable oh-my-zsh
 source $ZSH/oh-my-zsh.sh
 
-# navigational shortcuts
-alias cdsites="cd ~/Sites";
 # cd up to the root of a git project
 alias cdg='cd $(git rev-parse --show-toplevel)'
 
-# hidden files shortcutes
+# Hidden files shortcuts
 alias showhiddenfiles="defaults write com.apple.Finder AppleShowAllFiles YES; killall Finder";
 alias hidehiddenfiles="defaults write com.apple.Finder AppleShowAllFiles NO; killall Finder";
 
-# git shortcuts that git aliases can't easily do
+# Git shortcuts that git aliases can't easily do
 alias st="clear; git status";
 alias g='git'
-alias gitspp='git stash; git pull --rebase; git stash pop'
-alias gitprp='git pull --rebase && git push'
 
 # Shortcuts for starting/stopping various services 
 alias mysql='/usr/local/mysql/bin/mysql -uroot -A'

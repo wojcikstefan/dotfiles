@@ -18,8 +18,7 @@
 .sh_history
 .viminfo
 .Xauthority
-.zcompdump
-.zcompdump-Stefan’s MacBook Pro-4.3.11
+.zcompdump*
 .zshrc.pre-oh-my-zsh
 .zsh_history
 .zsh-update
