@@ -38,6 +38,8 @@ let g:ctrlp_prompt_mappings = {
 " set runtimepath^=~/.vim/bundle/jedi-vim/jedi_vim.vim
 let g:jedi#use_tabs_not_buffers = 0
 let g:jedi#use_splits_not_buffers = "left"
+let g:jedi#popup_on_dot = 0
+let g:jedi#completions_enabled = 0
 
 " Color scheme
 color blackboard
