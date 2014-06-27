@@ -11,6 +11,10 @@ set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 
+" If you type '#' when smartindent is on, it brings the cursor to the first
+" column. I don't want that.
+inoremap # X<BS>#
+
 " UTF8 encoding
 set encoding=utf-8
 
