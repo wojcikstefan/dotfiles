@@ -1,5 +1,11 @@
 export EDITOR=vim
 
+# Set up Maven-related paths and JAVA_HOME
+export M2_HOME=/Users/wojcikstefan/maven/apache-maven-3.2.2
+export M2=$M2_HOME/bin
+export PATH=$M2:$PATH
+export JAVA_HOME=$(/usr/libexec/java_home)
+
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
@@ -57,7 +63,7 @@ alias flushdns='dscacheutil -flushcache;sudo killall -HUP mDNSResponder'
 alias memcpu="ps -amcwwwxo \"command %mem %cpu\" | grep -v grep | head -13"
 
 # start elasticsearch
-alias startelasticsearch="eval \"ES_HEAP_SIZE=5g `cat /usr/bin/elasticsearch` -f\""
+alias startelasticsearch="eval \"ES_HEAP_SIZE=5g `cat /usr/bin/elasticsearch`\""
 
 # Ruby RVM
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # This loads RVM into a shell session.
