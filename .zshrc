@@ -63,7 +63,7 @@ alias flushdns='dscacheutil -flushcache;sudo killall -HUP mDNSResponder'
 alias memcpu="ps -amcwwwxo \"command %mem %cpu\" | grep -v grep | head -13"
 
 # start elasticsearch
-alias startelasticsearch="eval \"ES_HEAP_SIZE=5g `cat /usr/bin/elasticsearch`\""
+alias startelasticsearch="ES_HEAP_SIZE=5g elasticsearch"
 
 # Ruby RVM
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # This loads RVM into a shell session.
