@@ -34,7 +34,7 @@ tell application "iTerm"
         tell the last session to write text "redis-server"
 
         tell application "System Events" to keystroke "d" using command down
-        tell the last session to write text "startelasticsearch"
+        tell the last session to write text "elasticsearch"
 
     end tell
 

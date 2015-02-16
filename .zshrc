@@ -1,5 +1,8 @@
 export EDITOR=vim
 
+# Elasticsearch env vars
+export ES_HEAP_SIZE=5g
+
 # Set up Maven-related paths and JAVA_HOME
 export M2_HOME=/Users/wojcikstefan/maven/apache-maven-3.2.2
 export M2=$M2_HOME/bin
@@ -62,11 +65,7 @@ alias flushdns='dscacheutil -flushcache;sudo killall -HUP mDNSResponder'
 # memory and cpu percentage
 alias memcpu="ps -amcwwwxo \"command %mem %cpu\" | grep -v grep | head -13"
 
-# start elasticsearch
-alias startelasticsearch="ES_HEAP_SIZE=5g elasticsearch"
-
 # Ruby RVM
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # This loads RVM into a shell session.
 
 export PATH=/opt/local/bin:/opt/local/sbin:/usr/local/bin:$PATH
 
@@ -75,8 +74,10 @@ export PATH=/opt/local/bin:/opt/local/sbin:/usr/local/bin:$PATH
 export CFLAGS="-I/opt/local/include $CFLAGS"
 export LDFLAGS="-L/opt/local/lib $LDFLAGS"
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 PATH=$PATH:/usr/local/mysql/bin/ # add mysql binaries to the path
+
+# Add Postgres.app to PATH
+PATH=/Applications/Postgres.app/Contents/Versions/9.3/bin:$PATH
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
@@ -85,3 +86,5 @@ export PATH="/usr/local/heroku/bin:$PATH"
 __git_files () { 
     _wanted files expl 'local files' _files     
 }
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
