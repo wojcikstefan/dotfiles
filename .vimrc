@@ -51,7 +51,7 @@ hi Normal		ctermfg=254		ctermbg=234		cterm=none		guifg=#f6f3e8	guibg=#121212	gui
 
 " Turn off MacVim toolbar
 " http://vim.wikia.com/wiki/Hide_toolbar_or_menus_to_see_more_text
-set guioptions-=T 
+set guioptions-=T
 
 " Don't autowrap lines
 set textwidth=0
@@ -101,9 +101,9 @@ syntax on
 "let g:acp_behaviorPythonOmniLength = -1 
 
 " Use ctrl-[hjkl] to select the active split!
-nmap <silent> <c-k> :wincmd k<CR>                                                                                                                       
-nmap <silent> <c-j> :wincmd j<CR>                                                                                                                       
-nmap <silent> <c-h> :wincmd h<CR>                                                                                                                       
+nmap <silent> <c-k> :wincmd k<CR>
+nmap <silent> <c-j> :wincmd j<CR>
+nmap <silent> <c-h> :wincmd h<CR>
 nmap <silent> <c-l> :wincmd l<CR>
 
 " ignore case if all searched characters are lower or consider case if any of them is upper
