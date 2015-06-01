@@ -100,7 +100,7 @@ syntax on
 "autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 "let g:acp_behaviorPythonOmniLength = -1 
 
-" Use ctrl-[hjkl] to select the active split!
+" Use ctrl-[hjkl] to select the active split
 nmap <silent> <c-k> :wincmd k<CR>
 nmap <silent> <c-j> :wincmd j<CR>
 nmap <silent> <c-h> :wincmd h<CR>

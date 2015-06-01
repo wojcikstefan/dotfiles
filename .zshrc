@@ -88,3 +88,6 @@ __git_files () {
 }
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+# Set up env variables for the New Relic Agent (used for local testing of Gunicorn)
+export NEW_RELIC_ENVIRONMENT=development
