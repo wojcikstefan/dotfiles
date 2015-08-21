@@ -45,11 +45,7 @@ alias startservices='open ~/start_closeio_services.app'
 alias cdsz='cd ~/Repos/sztukonet/ && venv'
 
 # virtualenv helpers
-alias virtualenv="virtualenv-2.7"
 alias venv=". venv/bin/activate || . env/bin/activate"
-
-#ack
-alias ack='ack-5.12'
 
 # Python Stuff
 export PYTHONPATH="./lib:.:/Library/Python/2.7/site-packages:$PYTHONPATH";
