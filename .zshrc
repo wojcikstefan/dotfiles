@@ -9,6 +9,10 @@ export M2=$M2_HOME/bin
 export PATH=$M2:$PATH
 export JAVA_HOME=$(/usr/libexec/java_home)
 
+# Add the Go env variables
+export GOPATH=$HOME/go
+export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
+
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
@@ -87,3 +91,7 @@ export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 # Set up env variables for the New Relic Agent (used for local testing of Gunicorn)
 export NEW_RELIC_ENVIRONMENT=development
+
+# temporary
+alias goinstall="go install github.com/closeio/flashback && go install github.com/closeio/flashback/cmd/flashback"
+
