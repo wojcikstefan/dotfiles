@@ -1,9 +1,9 @@
-# A script to run all the services necessary to develop Close.io
+# A script to run all the backend services necessary to develop Close.io
 #
 # Cheatsheet
 # Split pane horizontally: tell application "System Events" to keystroke "D" using command down
 # Split pane vertically: tell application "System Events" to keystroke "d" using command down
-# Compile with: osacompile -o start_closeio_services.app start_closeio_services.scpt
+# Compile with: osacompile -o start_backends.app start_backends.scpt
 
 tell application "iTerm"
     activate
@@ -14,14 +14,7 @@ tell application "iTerm"
     tell myterm
         launch session "Panes"
 
-        tell the last session to write text "mongod -f ~/mongodb/local.conf"
-        #tell the last session to write text "mongod -f ~/mongodb/local_rs_conf_0.conf"
-
-        #tell application "System Events" to keystroke "d" using command down
-        #tell the last session to write text "mongod -f ~/mongodb/local_rs_conf_1.conf"
-
-        #tell application "System Events" to keystroke "d" using command down
-        #tell the last session to write text "mongod -f ~/mongodb/local_rs_conf_2.conf"
+        tell the last session to write text "mongod -f ~/mongodb/configs/local.conf"
 
     end tell
 
@@ -34,7 +27,7 @@ tell application "iTerm"
         tell the last session to write text "redis-server"
 
         tell application "System Events" to keystroke "d" using command down
-        tell the last session to write text "elasticsearch"
+        tell the last session to write text "ES_HEAP_SIZE=8g elasticsearch"
 
     end tell
 

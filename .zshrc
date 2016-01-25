@@ -43,7 +43,8 @@ alias g='git'
 
 # Shortcuts for Close.io
 alias cdcio='cd ~/Repos/closeio/ && venv'
-alias startservices='open ~/start_closeio_services.app'
+alias startservices='open ~/start_backends.app'
+alias startcloseio='open ~/start_closeio.app'
 
 # Shortcuts for Sztukonet
 alias cdsz='cd ~/Repos/sztukonet/ && venv'
@@ -52,9 +53,8 @@ alias cdsz='cd ~/Repos/sztukonet/ && venv'
 alias venv=". venv/bin/activate || . env/bin/activate"
 
 # Python Stuff
-export PYTHONPATH="./lib:.:/Library/Python/2.7/site-packages:$PYTHONPATH";
+export PYTHONPATH=".:./lib"
 alias pipr="pip install -U --exists-action=s -r requirements.txt"
-alias startcelery="./manage.py celery worker -B"
 
 # mtr
 alias mtr="/usr/local/sbin/mtr"
@@ -73,8 +73,6 @@ export PATH=/opt/local/bin:/opt/local/sbin:/usr/local/bin:$PATH
 # (Fixes pip install gevent, etc.)
 export CFLAGS="-I/opt/local/include $CFLAGS"
 export LDFLAGS="-L/opt/local/lib $LDFLAGS"
-
-PATH=$PATH:/usr/local/mysql/bin/ # add mysql binaries to the path
 
 # Add Postgres.app to PATH
 PATH=/Applications/Postgres.app/Contents/Versions/9.3/bin:$PATH
@@ -95,3 +93,5 @@ export NEW_RELIC_ENVIRONMENT=development
 # temporary
 alias goinstall="go install github.com/closeio/flashback && go install github.com/closeio/flashback/cmd/flashback"
 
+# ES command
+alias elasticsearch="~/elasticsearch/elasticsearch-1.4.2/bin/elasticsearch"
