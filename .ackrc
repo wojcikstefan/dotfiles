@@ -4,6 +4,7 @@
 --type-set=puppet=pp
 --nosql
 --ignore-dir=venv
+--ignore-dir=.venv
 --ignore-dir=lib/close-www
 --type-add=html=.hbs
 --ignore-dir=closeio/static/js/vendor

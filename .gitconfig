@@ -17,13 +17,21 @@
     old = red
     new = green
 
+[color "diff-highlight"]
+    oldNormal = red bold
+    oldHighlight = red bold 52
+    newNormal = green bold
+    newHighlight = green bold 22
+
 [color "status"]
     added = yellow
     changed = green
     untracked = cyan
 
 [core]
-    pager = less -FRSX
+    # pager = less -FRSX
+    # using https://github.com/stevemao/diff-so-fancy for diffs
+    pager = diff-highlight | diff-so-fancy | less --tabs=1,5 -FRSX
     whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
     excludesfile = ~/.gitignore
     quotepath = false

@@ -50,7 +50,7 @@ alias startcloseio='open ~/start_closeio.app'
 alias cdsz='cd ~/Repos/sztukonet/ && venv'
 
 # virtualenv helpers
-alias venv=". venv/bin/activate || . env/bin/activate"
+alias venv=". venv/bin/activate || . env/bin/activate || . .venv/bin/activate"
 
 # Python Stuff
 export PYTHONPATH=".:./lib"
