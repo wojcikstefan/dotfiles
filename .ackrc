@@ -4,6 +4,7 @@
 --type-set=puppet=pp
 --nosql
 --ignore-dir=venv
+--ignore-dir=venv3
 --ignore-dir=.venv
 --ignore-dir=lib/close-www
 --type-add=html=.hbs
@@ -13,3 +14,5 @@
 --ignore-dir=closeio/static/js/dist/
 --ignore-dir=node_modules
 --ignore-dir=js/lib/
+--ignore-dir=vendor
+--ignore-dir=dist

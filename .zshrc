@@ -43,6 +43,7 @@ alias g='git'
 
 # Shortcuts for Close.io
 alias cdcio='cd ~/Repos/closeio/ && venv'
+alias cdjs='cd closeio/static/js'
 alias startservices='open ~/start_backends.app'
 alias startcloseio='open ~/start_closeio.app'
 
