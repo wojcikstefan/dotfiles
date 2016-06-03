@@ -1,42 +1,40 @@
 # A script to run all the backend services necessary to develop Close.io
 #
-# Cheatsheet
-# Split pane horizontally: tell application "System Events" to keystroke "D" using command down
-# Split pane vertically: tell application "System Events" to keystroke "d" using command down
 # Compile with: osacompile -o start_backends.app start_backends.scpt
 
-tell application "iTerm"
-    activate
+tell application "iTerm2"
 
-    # make a new terminal
-    set myterm to (make new terminal)
+    # Create a new window
+    set newWindow to (create window with default profile)
 
-    tell myterm
-        launch session "Panes"
+    select newWindow
+    tell newWindow
 
-        tell the last session to write text "mongod -f ~/mongodb/configs/local.conf"
+        # Run MongoDB in the first tab
+        tell current session to write text "mongod -f ~/mongodb/configs/local.conf"
+
+        # Add a tab and run Redis and Elasticsearch in separate panes
+        set newTab to (create tab with default profile)
+        tell newTab
+            tell current session
+
+                set newSession to (split vertically with default profile)
+                tell newSession
+                    write text "redis-server"
+                end tell
+
+                write text "ES_HEAP_SIZE=8g elasticsearch"
+            end tell
+        end tell
+
+        # Add a tab and go to the repo
+        set newTab2 to (create tab with default profile)
+        tell newTab2
+            tell current session
+                write text "cdcio"
+            end tell
+        end tell
 
     end tell
-
-    # launch a default shell in a new tab in the same terminal
-    launch session "Default Session"
-
-    tell myterm
-        launch session "Panes"
-
-        tell the last session to write text "redis-server"
-
-        tell application "System Events" to keystroke "d" using command down
-        tell the last session to write text "ES_HEAP_SIZE=8g elasticsearch"
-
-    end tell
-
-    # launch a default shell in a new tab in the same terminal
-    launch session "Default Session"
-
-    tell myterm
-        launch session "Panes"
-        tell the last session to write text "cdcio"
-    end tell
-
 end tell
+
