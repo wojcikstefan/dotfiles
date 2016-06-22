@@ -64,6 +64,7 @@
     m = merge --no-ff
     pul = pull
     pus = push
+    pushstaging = !sh -c 'git branch -D staging && git checkout -b staging && git push -f -u origin staging'
 
     stup = !"git stash && git pl && git ps && git stash pop"
     ps = !"git push origin `git branch | sed -e '/^[^*]/d' -e 's/* \\(.*\\)/\\1/'`"
