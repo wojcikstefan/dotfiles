@@ -1,3 +1,4 @@
+# Irrelevant dotfiles 
 .bash_history
 .CFUserTextEncoding
 .dbshell
@@ -23,13 +24,26 @@
 .zshrc.pre-oh-my-zsh
 .zsh_history
 .zsh-update
-Dropbox
-nbproject
-
-*.swp
-*.app
-*.rdb
-
+.atom/
+.aws/
+.bash_profile
+.bashrc
+.fbPager.log
+.fbPager.pickle
+.fbPager.sh
+.irb-history
+.lldb-history
+.mkshrc
+.mongorc.js.orig
+.node-gyp/
+.oracle_jre_usage/
+.psql_history
+.python_history
+.rvm/
+.sqlite_history
+.tox/
+.vagrant.d/
+.zlogin
 .autobahn/
 .cache/
 .config/
@@ -52,7 +66,6 @@ nbproject
 .ssh/
 .subversion/
 .Trash/
-
 .vim/.VimballRecord
 .vim/autoload/
 .vim/backup/
@@ -65,6 +78,12 @@ nbproject
 .vim/ruby/
 .vim/syntax/
 
+# Junk
+*.swp
+*.app
+*.rdb
+
+# Irrelevant folders
 Applications/
 Desktop/
 Documents/
@@ -72,14 +91,24 @@ Downloads/
 Dropbox/
 Dropbox (Elastic)/
 Library/
+go/
 mongodb/
+redis/
+mysql/
 Movies/
 Music/
 Pictures/
 Public/
 Repos/
+Sites/
 VirtualBox VMs/
 apmplanner2/
 elasticsearch/
 maven/
 tmp/
+Dropbox/
+nbproject/
+
+# Logs
+access.log
+error.log
