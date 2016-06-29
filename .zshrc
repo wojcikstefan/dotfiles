@@ -44,6 +44,7 @@ alias g='git'
 # Shortcuts for Close.io
 alias cdcio='cd ~/Repos/closeio/ && venv'
 alias cdjs='cd closeio/static/js'
+alias cdless='cd closeio/static/less'
 alias startservices='open ~/start_backends.app'
 alias startcloseio='open ~/start_closeio.app'
 
@@ -54,7 +55,7 @@ alias cdsz='cd ~/Repos/sztukonet/ && venv'
 alias venv=". venv/bin/activate || . env/bin/activate || . .venv/bin/activate"
 
 # Python Stuff
-export PYTHONPATH=".:./lib"
+export PYTHONPATH="."
 alias pipr="pip install -U --exists-action=s -r requirements.txt"
 
 # mtr
