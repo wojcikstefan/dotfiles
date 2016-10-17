@@ -6,6 +6,7 @@
 --ignore-dir=venv
 --ignore-dir=venv3
 --ignore-dir=.venv
+--ignore-dir=.tox
 --ignore-dir=lib/close-www
 --type-add=html=.hbs
 --ignore-dir=closeio/static/js/vendor

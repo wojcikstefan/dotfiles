@@ -56,7 +56,7 @@ alias venv=". venv/bin/activate || . env/bin/activate || . .venv/bin/activate"
 
 # Python Stuff
 export PYTHONPATH="."
-alias pipr="pip install -U --exists-action=s -r requirements.txt"
+alias pipr="pip install --no-deps --exists-action=s -r requirements.txt"
 
 # mtr
 alias mtr="/usr/local/sbin/mtr"
