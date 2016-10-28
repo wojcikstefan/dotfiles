@@ -11,8 +11,8 @@ set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 
-" If you type '#' when smartindent is on, it brings the cursor to the first
-" column. I don't want that.
+" By default, if you type '#' when smartindent is on, it brings the cursor to
+" the first column. I don't want that.
 inoremap # X<BS>#
 
 " UTF8 encoding
@@ -24,7 +24,7 @@ set mouse=a
 " Don't show whitespace as visible characters
 set nolist
 
-" Adding CtrlP - included by pathogen
+" Adding CtrlP [nvm, included by pathogen]
 "set runtimepath^=~/.vim/bundle/ctrlp.vim
 
 " CtrlP shortcut
@@ -53,9 +53,11 @@ hi Normal		ctermfg=254		ctermbg=234		cterm=none		guifg=#f6f3e8	guibg=#121212	gui
 " http://vim.wikia.com/wiki/Hide_toolbar_or_menus_to_see_more_text
 set guioptions-=T
 
-" Don't autowrap lines
+" Don't wrap the lines by default
+set nowrap
+
+" Don't autowrap lines while typing
 set textwidth=0
-au FileType python set softtabstop=4 tabstop=4 shiftwidth=4 textwidth=0
 
 " Make tab completion show list of files
 " http://stackoverflow.com/a/526940/137067
@@ -68,21 +70,23 @@ set wildmode=longest:full
 " Don't keep swp files, since git keeps everything safe
 set noswapfile
 
-" dont wrap the lines by default
-set nowrap
-" Dont show *.pyc files in NERDTree
+" Don't show *.pyc files in NERDTree
 let NERDTreeIgnore=['\.pyc$']
+
 " Make F1 do the same thing as ESC (prevents help typos)
 inoremap <F1> <ESC>
 nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
-" Make ; work as :
+
+" Make ';' work as ':'
 nnoremap ; :
-" highlight search results
+
+" Highlight search results
 set incsearch
 set showmatch
 set hlsearch
-" underline current line
+
+" Underline current line
 set cursorline
 set colorcolumn=79  " color the 79th column for line length reference
 set laststatus=2    " always show the status line
@@ -90,7 +94,7 @@ set modelines=0 " prevents some security exploits
 
 " Auto-trim whitespace on lines when saving files of certain types
 " http://vim.wikia.com/wiki/Remove_unwanted_spaces
-autocmd FileType python,php autocmd BufWritePre <buffer> :%s/\s\+$//e
+autocmd FileType python,php,javascript autocmd BufWritePre <buffer> :%s/\s\+$//e
 syntax on
 
 " Autocompletions
@@ -106,13 +110,14 @@ nmap <silent> <c-j> :wincmd j<CR>
 nmap <silent> <c-h> :wincmd h<CR>
 nmap <silent> <c-l> :wincmd l<CR>
 
-" ignore case if all searched characters are lower or consider case if any of them is upper
+" Ignore case if all searched characters are lower or consider case if any of them is upper
 set ignorecase
 set smartcase
-" always show line number
+
+" Always show the line number
 set ruler
 
-" set the leader key to be , instead of \
+" Set the leader key to be , instead of \
 let mapleader = ","
 
 " vp doesn't replace paste buffer
