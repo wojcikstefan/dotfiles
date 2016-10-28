@@ -81,7 +81,7 @@ vnoremap <F1> <ESC>
 " Make ';' work as ':'
 nnoremap ; :
 
-" Make 'jj' work ESC when in the insert mode
+" Make 'jj' work as ESC when in insert mode
 imap jj <Esc>
 
 " Highlight search results
