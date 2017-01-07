@@ -53,6 +53,7 @@ alias cdsz='cd ~/Repos/sztukonet/ && venv'
 
 # virtualenv helpers
 alias venv=". venv/bin/activate || . env/bin/activate || . .venv/bin/activate"
+alias venv3=". venv3/bin/activate"
 
 # Python Stuff
 export PYTHONPATH="."
@@ -92,8 +93,8 @@ export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 # Set up env variables for the New Relic Agent (used for local testing of Gunicorn)
 export NEW_RELIC_ENVIRONMENT=development
 
-# temporary
-alias goinstall="go install github.com/closeio/flashback && go install github.com/closeio/flashback/cmd/flashback"
-
 # ES command
 alias elasticsearch="~/elasticsearch/elasticsearch-1.4.2/bin/elasticsearch"
+
+# added by travis gem
+[ -f /Users/wojcikstefan/.travis/travis.sh ] && source /Users/wojcikstefan/.travis/travis.sh
