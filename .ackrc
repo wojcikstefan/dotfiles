@@ -3,8 +3,11 @@
 --type-add=html=.hbs
 --type-set=puppet=pp
 --nosql
+--ignore-file=is:.coverage
 --ignore-dir=.eggs
+--ignore-dir=build
 --ignore-dir=venv
+--ignore-dir=venv26
 --ignore-dir=venv3
 --ignore-dir=.venv
 --ignore-dir=.tox
