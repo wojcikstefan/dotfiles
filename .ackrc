@@ -6,6 +6,7 @@
 --ignore-file=is:.coverage
 --ignore-dir=.eggs
 --ignore-dir=build
+--ignore-dir=env
 --ignore-dir=venv
 --ignore-dir=venv26
 --ignore-dir=venv3
@@ -21,3 +22,4 @@
 --ignore-dir=js/lib/
 --ignore-dir=vendor
 --ignore-dir=dist
+--ignore-dir=mongoengine.egg-info
