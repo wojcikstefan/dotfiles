@@ -1,4 +1,8 @@
 export EDITOR=vim
+export TERMINAL_TYPE=iterm2
+
+# docker-compose shortcut
+alias dc=docker-compose
 
 # Elasticsearch env vars
 export ES_HEAP_SIZE=5g
@@ -12,6 +16,9 @@ export JAVA_HOME=$(/usr/libexec/java_home)
 # Add the Go env variables
 export GOPATH=$HOME/go
 export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
+
+# Add Postgres.app command line tools to the PATH
+export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
 
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
@@ -41,12 +48,21 @@ alias hidehiddenfiles="defaults write com.apple.Finder AppleShowAllFiles NO; kil
 alias st="clear; git status";
 alias g='git'
 
+# Close.io env vars (primarily for Docker)
+export CLOSEIO_SSL_DIR=/Users/wojcikstefan/Repos/closeio/config/localhost
+
 # Shortcuts for Close.io
+alias cdmongo='cd ~/Repos/temp/mongoengine && venv'
 alias cdcio='cd ~/Repos/closeio/ && venv'
-alias cdjs='cd closeio/static/js'
-alias cdless='cd closeio/static/less'
-alias startservices='open ~/start_backends.app'
-alias startcloseio='open ~/start_closeio.app'
+alias cdjs='cd ui/js'
+alias cdless='cd ui/less'
+alias cdinf='cd ~/Repos/closeio-infrastructure/ && venv'
+alias cdshark='cd ~/Repos/closeio-socketshark/'
+alias cddialer='cd ~/Repos/dialer/'
+alias cddev='cd ~/Repos/devtools/'
+alias cdcleancat='cd ~/Repos/cleancat && venv'
+alias dcpsql='cddev && dc exec postgres psql -U closeio_admin closeio'
+alias dcbash='cddev && dc run --rm closeio_api bash'
 
 # Shortcuts for Sztukonet
 alias cdsz='cd ~/Repos/sztukonet/ && venv'
@@ -57,6 +73,7 @@ alias venv3=". venv3/bin/activate"
 
 # Python Stuff
 export PYTHONPATH="."
+export PYTHONDONTWRITEBYTECODE="true"
 alias pipr="pip install --no-deps --exists-action=s -r requirements.txt"
 
 # mtr
