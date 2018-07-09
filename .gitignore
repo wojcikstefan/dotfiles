@@ -82,8 +82,26 @@
 *.swp
 *.app
 *.rdb
+.babel.json
+.bash_profile-anaconda.bak
 
 # Irrelevant folders
+.cargo/
+.docker/
+.ionic/
+.ipynb_checkpoints/
+.jupyter/
+.keras/
+.matplotlib/
+.multirust
+.pylint.d/
+.rediscli_history
+.rustup/
+.travis/
+.v8flags.4.5.103.33.wojcikstefan.json
+.yarnrc
+.torch/
+.yarn/
 Applications/
 Desktop/
 Documents/
@@ -108,6 +126,7 @@ maven/
 tmp/
 Dropbox/
 nbproject/
+~/node_modules
 
 # Logs
 access.log
