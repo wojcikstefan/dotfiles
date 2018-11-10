@@ -1,16 +1,30 @@
-" Pathogen (installing stuff from .vim/bundle)
-execute pathogen#infect()
+" XXX to use this config w/ neovim, copy it to .config/nvim/init.vim
 
-" Usings 4 space indentation for Python and 2 space for JS
-" http://tedlogan.com/techblog3.html
+" Initialize vim-plug.
+call plug#begin('~/.local/share/nvim/plugged')
+Plug 'morhetz/gruvbox'
+call plug#end()
+
+" Set the color scheme to gruvbox (https://github.com/morhetz/gruvbox).
+colorscheme gruvbox
+set background=dark
+
+" Usings 4 space indentation for Python.
 set smarttab
 set expandtab
 set autoindent
 set smartindent
-autocmd Filetype text setlocal tabstop=4 softtabstop=4 shiftwidth=4
-autocmd Filetype html setlocal tabstop=4 softtabstop=4 shiftwidth=4
-autocmd Filetype python setlocal tabstop=4 softtabstop=4 shiftwidth=4
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+
+" Use 2 space indents for JS.
 autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
+
+" Make `jj`, `jk`, and `kj` throw you into normal mode.
+inoremap jj <esc>
+inoremap jk <esc>
+inoremap kk <esc>
 
 " By default, if you type '#' when smartindent is on, it brings the cursor to
 " the first column. I don't want that.
@@ -19,40 +33,11 @@ inoremap # X<BS>#
 " UTF8 encoding
 set encoding=utf-8
 
-" Mouse support (in non gui mode)
+" Mouse support (in non-GUI mode)
 set mouse=a
 
 " Don't show whitespace as visible characters
 set nolist
-
-" Adding CtrlP [nvm, included by pathogen]
-"set runtimepath^=~/.vim/bundle/ctrlp.vim
-
-" CtrlP shortcut
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
-
-" CtrlP opens files in new tabs
-" https://github.com/kien/ctrlp.vim/issues/119
-let g:ctrlp_prompt_mappings = {
-  \ 'AcceptSelection("e")': [],
-  \ 'AcceptSelection("t")': ['<cr>', '<c-m>'],
-  \ }
-
-" Jedi-vim - included by pathogen
-" set runtimepath^=~/.vim/bundle/jedi-vim/jedi_vim.vim
-let g:jedi#use_tabs_not_buffers = 0
-let g:jedi#use_splits_not_buffers = "left"
-let g:jedi#popup_on_dot = 0
-let g:jedi#completions_enabled = 0
-
-" Color scheme
-color blackboard
-hi Normal		ctermfg=254		ctermbg=234		cterm=none		guifg=#f6f3e8	guibg=#121212	gui=none
-
-" Turn off MacVim toolbar
-" http://vim.wikia.com/wiki/Hide_toolbar_or_menus_to_see_more_text
-set guioptions-=T
 
 " Don't wrap the lines by default
 set nowrap
@@ -70,14 +55,6 @@ set wildmode=longest:full
 
 " Don't keep swp files, since git keeps everything safe
 set noswapfile
-
-" Don't show *.pyc files in NERDTree
-let NERDTreeIgnore=['\.pyc$']
-
-" Make F1 do the same thing as ESC (prevents help typos)
-inoremap <F1> <ESC>
-nnoremap <F1> <ESC>
-vnoremap <F1> <ESC>
 
 " Make ';' work as ':'
 nnoremap ; :
@@ -98,30 +75,20 @@ set modelines=0 " prevents some security exploits
 autocmd FileType python,php,javascript autocmd BufWritePre <buffer> :%s/\s\+$//e
 syntax on
 
-" Autocompletions
-"autocmd FileType python setlocal omnifunc=pysmell#Complete
-"autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
-"autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
-"autocmd FileType css set omnifunc=csscomplete#CompleteCSS
-"let g:acp_behaviorPythonOmniLength = -1 
-
 " Use ctrl-[hjkl] to select the active split
 nmap <silent> <c-k> :wincmd k<CR>
 nmap <silent> <c-j> :wincmd j<CR>
 nmap <silent> <c-h> :wincmd h<CR>
 nmap <silent> <c-l> :wincmd l<CR>
 
-" Ignore case if all searched characters are lower or consider case if any of them is upper
+" Ignore case if all searched characters are lowercase.
 set ignorecase
 set smartcase
-
-" Always show the line number
-set ruler
 
 " Set the leader key to be , instead of \
 let mapleader = ","
 
-" vp doesn't replace paste buffer
+" Make selecting and pasting (vp) not replace the paste buffer.
 function! RestoreRegister()
     let @" = s:restore_reg
     return ''
@@ -132,21 +99,3 @@ function! s:Repl()
     return "p@=RestoreRegister()\<cr>"
 endfunction
 vmap <silent> <expr> p <sid>Repl()
-
-
-" Make Ctrl-P plugin a lot faster for Git projects
-" Configure CtrlP to use git or silver searcher for autocompletion
-let g:ctrlp_use_caching = 0
-if executable('ag')
-    set grepprg=ag\ --nogroup\ --nocolor
-
-    let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-else
-  let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard | grep -v node_modules', 'find %s -type f']
-  let g:ctrlp_prompt_mappings = {
-    \ 'AcceptSelection("e")': ['<space>', '<cr>', '<2-LeftMouse>'],
-    \ }
-endif
-
-" Let CtrlP ignore node_modules
-let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
