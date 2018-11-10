@@ -64,8 +64,9 @@ alias cdcleancat='cd ~/Repos/cleancat && venv'
 alias dcpsql='cddev && dc exec postgres psql -U closeio_admin closeio'
 alias dcbash='cddev && dc run --rm closeio_api bash'
 
-# Shortcuts for Sztukonet
+# Shortcuts for other projects
 alias cdsz='cd ~/Repos/sztukonet/ && venv'
+alias cdclaudia='cd ~/Repos/claudia/proj1 && venv'
 
 # virtualenv helpers
 alias venv=". venv/bin/activate || . env/bin/activate || . .venv/bin/activate"
@@ -115,3 +116,6 @@ alias elasticsearch="~/elasticsearch/elasticsearch-1.4.2/bin/elasticsearch"
 
 # added by travis gem
 [ -f /Users/wojcikstefan/.travis/travis.sh ] && source /Users/wojcikstefan/.travis/travis.sh
+
+# makes mtr work on my machine
+alias mtr='PATH=/usr/local/sbin:$PATH sudo mtr'

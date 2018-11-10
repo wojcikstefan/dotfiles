@@ -31,7 +31,7 @@
 [core]
     # pager = less -FRSX
     # using https://github.com/stevemao/diff-so-fancy for diffs
-    pager = diff-highlight | diff-so-fancy | less --tabs=1,5 -FRSX
+    #pager = diff-highlight | diff-so-fancy | less --tabs=1,5 -FRSX
     whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
     excludesfile = ~/.gitignore
     quotepath = false

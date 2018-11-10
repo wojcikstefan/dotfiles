@@ -1,15 +1,16 @@
 " Pathogen (installing stuff from .vim/bundle)
 execute pathogen#infect()
 
-" Usings 4 space indentation only
+" Usings 4 space indentation for Python and 2 space for JS
 " http://tedlogan.com/techblog3.html
 set smarttab
 set expandtab
 set autoindent
 set smartindent
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
+autocmd Filetype text setlocal tabstop=4 softtabstop=4 shiftwidth=4
+autocmd Filetype html setlocal tabstop=4 softtabstop=4 shiftwidth=4
+autocmd Filetype python setlocal tabstop=4 softtabstop=4 shiftwidth=4
+autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
 
 " By default, if you type '#' when smartindent is on, it brings the cursor to
 " the first column. I don't want that.
@@ -80,9 +81,6 @@ vnoremap <F1> <ESC>
 
 " Make ';' work as ':'
 nnoremap ; :
-
-" Make 'jj' work as ESC when in insert mode
-imap jj <Esc>
 
 " Highlight search results
 set incsearch
