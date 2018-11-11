@@ -73,6 +73,8 @@ set modelines=0 " prevents some security exploits
 " Auto-trim whitespace on lines when saving files of certain types
 " http://vim.wikia.com/wiki/Remove_unwanted_spaces
 autocmd FileType python,php,javascript autocmd BufWritePre <buffer> :%s/\s\+$//e
+
+" Enable syntax highlighting.
 syntax on
 
 " Use ctrl-[hjkl] to select the active split
