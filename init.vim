@@ -1,3 +1,14 @@
+" XXX to use this config w/ neovim, copy/symlink it to .config/nvim/init.vim
+
+" Initialize vim-plug.
+call plug#begin('~/.local/share/nvim/plugged')
+Plug 'morhetz/gruvbox'
+call plug#end()
+
+" Set the color scheme to gruvbox (https://github.com/morhetz/gruvbox).
+colorscheme gruvbox
+set background=dark
+
 " Usings 4 space indentation for Python.
 set expandtab
 set smarttab
