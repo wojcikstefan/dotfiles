@@ -3,6 +3,8 @@
 " Initialize vim-plug.
 call plug#begin('~/.local/share/nvim/plugged')
 Plug 'morhetz/gruvbox'
+Plug 'ruanyl/vim-gh-line'
+Plug 'scrooloose/nerdtree'
 call plug#end()
 
 " Set the color scheme to gruvbox (https://github.com/morhetz/gruvbox).
@@ -20,6 +22,7 @@ set shiftwidth=4
 
 " Use 2 space indents for JS.
 autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
+autocmd Filetype less setlocal ts=2 sts=2 sw=2
 
 " By default, if you type '#' when smartindent is on, it brings the cursor to
 " the first column. I don't want that.
