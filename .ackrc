@@ -24,3 +24,4 @@
 --ignore-dir=dist
 --ignore-dir=mongoengine.egg-info
 --ignore-dir=.pytest_cache
+--ignore-dir=.mypy_cache
