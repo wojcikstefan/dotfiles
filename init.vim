@@ -3,13 +3,20 @@
 " Initialize vim-plug.
 call plug#begin('~/.local/share/nvim/plugged')
 Plug 'morhetz/gruvbox'
-Plug 'ruanyl/vim-gh-line'
 Plug 'scrooloose/nerdtree'
+Plug 'ruanyl/vim-gh-line'
+Plug 'prettier/vim-prettier'
+Plug 'natebosch/vim-lsc'
 call plug#end()
 
 " Set the color scheme to gruvbox (https://github.com/morhetz/gruvbox).
 colorscheme gruvbox
 set background=dark
+
+" Auto-format JS files w/ Prettier upon saving.
+autocmd BufWritePre *.js,*.json Prettier
+
+" XXX Keep the stuff below in sync w/ ~/.vimrc.
 
 " Usings 4 space indentation for Python.
 set expandtab
@@ -20,7 +27,7 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 
-" Use 2 space indents for JS.
+" Use 2 space indents for JS and LESS.
 autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
 autocmd Filetype less setlocal ts=2 sts=2 sw=2
 
@@ -71,6 +78,12 @@ set modelines=0 " prevents some security exploits
 " Auto-trim whitespace on lines when saving files of certain types
 " http://vim.wikia.com/wiki/Remove_unwanted_spaces
 autocmd FileType python,php,javascript autocmd BufWritePre <buffer> :%s/\s\+$//e
+
+" Start the Python Language Server for Python files.
+let g:lsc_server_commands = {'python': 'pyls -v --log-file ~/.vim/pyls.log'}
+let g:lsc_enable_autocomplete = v:true
+let g:lsc_auto_map = v:true
+autocmd CompleteDone * silent! pclose
 
 " Enable syntax highlighting.
 syntax on
