@@ -24,6 +24,7 @@
 .zshrc.pre-oh-my-zsh
 .zsh_history
 .zsh-update
+.zsh-secrets
 .atom/
 .aws/
 .bash_profile
