@@ -1,3 +1,5 @@
+" Check out ~/init.vim as well
+
 " Usings 4 space indentation for Python.
 set expandtab
 set smarttab
@@ -7,8 +9,9 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 
-" Use 2 space indents for JS.
+" Use 2 space indents for JS and LESS.
 autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
+autocmd Filetype less setlocal ts=2 sts=2 sw=2
 
 " By default, if you type '#' when smartindent is on, it brings the cursor to
 " the first column. I don't want that.
