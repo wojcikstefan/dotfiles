@@ -4,6 +4,12 @@ alias vim=nvim
 # Use vim (or NeoVim in fact) as the main editor.
 export EDITOR=vim
 
+# Tell ZSH to auto-complete my commands in a case-insensitive fashion.
+# Capital letters still only match capital letters, but lowercase letters
+# will match uppercase ones thanks to this `zstyle` pattern.
+autoload -Uz compinit && compinit
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+
 # I execute git commands countless times a day. Might as well use "g" for short.
 alias g=git
 alias gst="git status"
