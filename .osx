@@ -13,6 +13,11 @@ defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 defaults write com.apple.finder QuitMenuItem -bool true
 
 # Make the key repeat faster
-defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false;
 defaults write -g InitialKeyRepeat -int 10;
 defaults write -g KeyRepeat -int 1;
+
+# Disable pressing & holding a key bringing up the menu where you can
+# e.g. choose between "n" and "ñ". I used to remove disable this menu
+# to get a faster key repeat, but I no longer wanna do that since I
+# often write in Spanish these days.
+# defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false;
