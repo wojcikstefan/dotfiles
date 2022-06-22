@@ -22,6 +22,7 @@ alias cddialer='cd ~/Repos/dialer/'
 alias cddev='cd ~/Repos/devtools/'
 alias cdcleancat='cd ~/Repos/cleancat && venv'
 alias cdmongo='cd ~/Repos/temp/mongoengine && venv'
+alias cddotfiles='cd ~/Repos/dotfiles'
 alias dcpsql='cddev && dc exec postgres psql -U closeio_admin closeio'
 alias dcbash='cddev && dc run --rm closeio_shell bash'
 
@@ -36,3 +37,9 @@ export PYTHONDONTWRITEBYTECODE="true"
 
 # Shortcut for installing all dependencies from a `requirements.txt` file.
 alias pipr="pip install --no-deps --exists-action=s -r requirements.txt"
+
+# Add the Brew-installed Python v3.8 commands to the executable path.
+export PATH="/usr/local/opt/python@3.8/bin:$PATH"
+
+# Alias "python3" as "python" so that I don't have to type "python3" each time.
+alias python=python3
