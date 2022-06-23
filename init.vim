@@ -2,19 +2,28 @@
 
 " Initialize vim-plug.
 call plug#begin('~/.local/share/nvim/plugged')
+
+" My favorite color scheme.
 Plug 'morhetz/gruvbox'
+
+" My favorite way to navigate through files.
 Plug 'scrooloose/nerdtree'
+
+" This allows me to e.g. do press "<leader>gh" and open up the selected line
+" as a GitHub permalink in the browser. "<leader>gb" to GitHub's blame view
+" is useful, too.
 Plug 'ruanyl/vim-gh-line'
-Plug 'prettier/vim-prettier'
+
+" Vim Language Server Client that works with NeoVim.
+" Make sure to have the Python Language Server installed as well.
+" Run `pip install python-language-server` in the relevant virtual env
+" and see https://github.com/palantir/python-language-server for more info.
 Plug 'natebosch/vim-lsc'
 call plug#end()
 
 " Set the color scheme to gruvbox (https://github.com/morhetz/gruvbox).
 colorscheme gruvbox
 set background=dark
-
-" Auto-format JS files w/ Prettier upon saving.
-autocmd BufWritePre *.js,*.json Prettier
 
 " XXX Keep the stuff below in sync w/ ~/.vimrc.
 
