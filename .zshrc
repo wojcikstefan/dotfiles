@@ -47,5 +47,8 @@ alias pipr="pip install --no-deps --exists-action=s -r requirements.txt"
 # Add the Brew-installed Python v3.8 commands to the executable path.
 export PATH="/usr/local/opt/python@3.8/bin:$PATH"
 
+# Add "~/bin" to the path. Close infra tools require this one to work.
+export PATH=~/bin:$PATH
+
 # Alias "python3" as "python" so that I don't have to type "python3" each time.
 alias python=python3
