@@ -33,8 +33,8 @@ alias cdciodialer='cd ~/Repos/dialer/'
 alias cdciodev='cd ~/Repos/devtools/'
 alias cdmongo='cd ~/Repos/temp/mongoengine && venv'
 alias cddotfiles='cd ~/Repos/dotfiles'
-alias dcpsql='cddev && dc exec postgres psql -U closeio_admin closeio'
-alias dcbash='cddev && dc run --rm closeio_shell bash'
+alias dcpsql='cdciodev && dc exec postgres psql -U closeio_admin closeio'
+alias dcbash='cdciodev && dc run --rm closeio_shell bash'
 
 # Aliases for activating a Pythong virtual environment.
 alias venv=". venv/bin/activate || . env/bin/activate || . .venv/bin/activate"
