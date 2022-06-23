@@ -17,7 +17,12 @@ alias gst="git status"
 # Sometimes an invalid DNS entry can get cached. It's useful to flush the cache
 # in such case. This alias helps doing so without remembering intimate details
 # of the `dscacheutil` command.
-alias flushdns='dscacheutil -flushcache;sudo killall -HUP mDNSResponder'
+alias flushdns="dscacheutil -flushcache;sudo killall -HUP mDNSResponder"
+
+# Alias "docker-compose" as "dc". Technically there exists a tool called "dc"
+# already, but I never use it, and I use docker-compose frequent enough to
+# warrant this rename.
+alias dc="docker-compose"
 
 # Shortcuts for my current projects.
 alias cdcio='cd ~/Repos/closeio/ && venv'
