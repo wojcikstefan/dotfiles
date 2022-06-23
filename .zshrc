@@ -22,7 +22,7 @@ alias flushdns='dscacheutil -flushcache;sudo killall -HUP mDNSResponder'
 # Shortcuts for my current projects.
 alias cdcio='cd ~/Repos/closeio/ && venv'
 alias cdcioui='cd ~/Repos/close-ui/ && venv'
-alias cdinf='cd ~/Repos/closeio-infrastructure/ && venv'
+alias cdcioinf='cd ~/Repos/closeio-infrastructure/ && venv'
 alias cdshark='cd ~/Repos/closeio-socketshark/'
 alias cddialer='cd ~/Repos/dialer/'
 alias cddev='cd ~/Repos/devtools/'
