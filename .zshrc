@@ -26,10 +26,10 @@ alias dc="docker-compose"
 
 # Shortcuts for my current projects.
 alias cdcio='cd ~/Repos/closeio/ && venv'
-alias cdcioui='cd ~/Repos/close-ui/ && venv'
+alias cdcioui='cd ~/Repos/close-ui/'
 alias cdcioinf='cd ~/Repos/closeio-infrastructure/ && venv'
 alias cdcioshark='cd ~/Repos/closeio-socketshark/'
-alias cdciodialer='cd ~/Repos/dialer/'
+alias cdciodialer='cd ~/Repos/dialer/ && venv'
 alias cdcioevents='cd ~/Repos/events_service/'
 alias cdciodev='cd ~/Repos/devtools/'
 alias cdciozapier='cd ~/Repos/zapier-cli/'
@@ -37,6 +37,7 @@ alias cdmongo='cd ~/Repos/temp/mongoengine && venv'
 alias cddotfiles='cd ~/Repos/dotfiles'
 alias dcpsql='cdciodev && dc exec postgres psql -U closeio_admin closeio'
 alias dcbash='cdciodev && dc run --rm closeio_shell bash'
+alias dclogs='cdciodev && dc logs --tail 100 -f'
 
 # Aliases for activating a Pythong virtual environment.
 alias venv=". venv/bin/activate || . env/bin/activate || . .venv/bin/activate"
