@@ -1,3 +1,6 @@
+# Add Homebrew to the executable path.
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 # Always use NeoVim instead of the regular Vim.
 alias vim=nvim
 
@@ -36,8 +39,12 @@ alias cdciozapier='cd ~/Repos/zapier-cli/'
 alias cdmongo='cd ~/Repos/temp/mongoengine && venv'
 alias cddotfiles='cd ~/Repos/dotfiles'
 alias dcpsql='cdciodev && dc exec postgres psql -U closeio_admin closeio'
-alias dcbash='cdciodev && dc run --rm closeio_shell bash'
+alias dcbash='cdciodev && dc exec closeio_api echo && dc exec closeio_api bash || dc run --rm closeio_api bash'
 alias dclogs='cdciodev && dc logs --tail 100 -f'
+
+# Aliases for most common (and easiest to mis-type) git commands.
+alias gd="git diff"
+alias glg="git log"
 
 # Aliases for activating a Pythong virtual environment.
 alias venv=". venv/bin/activate || . env/bin/activate || . .venv/bin/activate"
@@ -59,3 +66,7 @@ export PATH=~/bin:$PATH
 
 # Alias "python3" as "python" so that I don't have to type "python3" each time.
 alias python=python3
+
+# Source some secrets that I want available as env vars in every shell session,
+# but that I don't wanna commit to my dotfiles repo.
+source ~/.zsh_secrets
