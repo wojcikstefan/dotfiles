@@ -39,8 +39,8 @@ alias cdciozapier='cd ~/Repos/zapier-cli/'
 alias cdmongo='cd ~/Repos/temp/mongoengine && venv'
 alias cddotfiles='cd ~/Repos/dotfiles'
 alias dcpsql='cdciodev && dc exec postgres psql -U closeio_admin closeio'
-alias dcbash='cdciodev && dc exec closeio_api echo && dc exec closeio_api bash || dc run --rm closeio_api bash'
-alias dclogs='cdciodev && dc logs --tail 100 -f'
+alias dcbash='cdciodev && (dc exec closeio_shell echo && dc exec closeio_shell bash) || dc run --rm closeio_shell bash'
+alias dclogs='cdciodev && dc logs --tail 100 -f -t'
 
 # Aliases for most common (and easiest to mis-type) git commands.
 alias gd="git diff"
@@ -64,9 +64,14 @@ export PATH="/usr/local/opt/python@3.8/bin:$PATH"
 # Add "~/bin" to the path. Close infra tools require this one to work.
 export PATH=~/bin:$PATH
 
-# Alias "python3" as "python" so that I don't have to type "python3" each time.
-alias python=python3
+# Choose which Python executable "python" refers to.
+alias python=python3.10
 
 # Source some secrets that I want available as env vars in every shell session,
 # but that I don't wanna commit to my dotfiles repo.
 source ~/.zsh_secrets
+
+# Add the Brew-installed Node v18 to the executable path.
+export PATH="/opt/homebrew/opt/node@18/bin:$PATH"
+
+source /Users/wojcikstefan/.docker/init-zsh.sh || true # Added by Docker Desktop
