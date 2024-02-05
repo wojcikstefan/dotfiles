@@ -1,4 +1,11 @@
 {
+    "files.exclude": {
+        "**/__pycache__": true,
+        "**/.mypy_cache": true,
+        "**/.pytest_cache": true,
+        "**/.ruff_cache": true,
+        "**/*.egg-info": true
+    },
     "workbench.colorTheme": "Default Dark Modern",
     "files.autoSave": "afterDelay",
     "editor.formatOnSave": true,
