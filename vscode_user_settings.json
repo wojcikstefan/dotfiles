@@ -1,0 +1,13 @@
+{
+    "workbench.colorTheme": "Default Dark Modern",
+    "files.autoSave": "afterDelay",
+    "editor.formatOnSave": true,
+    "git.autofetch": true,
+    "editor.defaultFormatter": "charliermarsh.ruff",
+    "explorer.confirmDelete": false,
+    "explorer.confirmDragAndDrop": false,
+    "editor.unicodeHighlight.allowedCharacters": {
+        "–": true
+    },
+    "editor.minimap.enabled": false
+}
