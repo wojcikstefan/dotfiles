@@ -16,6 +16,9 @@ defaults write com.apple.finder QuitMenuItem -bool true
 defaults write -g InitialKeyRepeat -int 10;
 defaults write -g KeyRepeat -int 1;
 
+# Make sure you can press & hold for key repeat in VS Code / Cursor.
+write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
+
 # Disable pressing & holding a key bringing up the menu where you can
 # e.g. choose between "n" and "ñ". I used to remove disable this menu
 # to get a faster key repeat, but I no longer wanna do that since I
