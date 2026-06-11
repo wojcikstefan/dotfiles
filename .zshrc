@@ -73,5 +73,3 @@ source ~/.zsh_secrets
 
 # Add the Brew-installed Node v18 to the executable path.
 export PATH="/opt/homebrew/opt/node@18/bin:$PATH"
-
-source /Users/wojcikstefan/.docker/init-zsh.sh || true # Added by Docker Desktop
