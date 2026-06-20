@@ -72,3 +72,5 @@
 [branch]
     # Make branches recently committed to appear on top in `git branch` output.
     sort = -committerdate     # desc
+[rebase]
+	updateRefs = true
