@@ -4,6 +4,12 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 # Always use NeoVim instead of the regular Vim.
 alias vim=nvim
 
+# Always use Cursor even when VS Code is requested.
+# Requires Cursor's shell command to be installed which you can
+# do via Cmd + Shift + P -> Shell Command: Install 'cursor' command
+alias code=cursor
+alias vscode=cursor
+
 # Use vim (or NeoVim in fact) as the main editor.
 export EDITOR=vim
 
@@ -17,6 +23,9 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 alias g=git
 alias gst="git status"
 
+# I execute devdawg commands often. Might as well use "dg" for short.
+alias dg=devdawg
+
 # Sometimes an invalid DNS entry can get cached. It's useful to flush the cache
 # in such case. This alias helps doing so without remembering intimate details
 # of the `dscacheutil` command.
@@ -26,6 +35,9 @@ alias flushdns="dscacheutil -flushcache;sudo killall -HUP mDNSResponder"
 # already, but I never use it, and I use docker-compose frequent enough to
 # warrant this rename.
 alias dc="docker-compose"
+
+# Spin up Claude Code faster with "cc"
+alias cc="claude"
 
 # Shortcuts for my current projects.
 alias cdcio='cd ~/Repos/closeio/ && venv'
@@ -40,6 +52,7 @@ alias cdmongo='cd ~/Repos/temp/mongoengine && venv'
 alias cddotfiles='cd ~/Repos/dotfiles'
 alias dcpsql='cdciodev && dc exec postgres psql -U closeio_admin closeio'
 alias dcbash='cdciodev && (dc exec closeio_shell echo && dc exec closeio_shell bash) || dc run --rm closeio_shell bash'
+alias dcdialerbash='cdciodev && (dc exec dialer_api echo && dc exec dialer_api bash) || dc run --rm dialer_api bash'
 alias dclogs='cdciodev && dc logs --tail 100 -f -t'
 
 # Aliases for most common (and easiest to mis-type) git commands.
@@ -73,3 +86,11 @@ source ~/.zsh_secrets
 
 # Add the Brew-installed Node v18 to the executable path.
 export PATH="/opt/homebrew/opt/node@18/bin:$PATH"
+
+export PATH="$HOME/.local/bin:$PATH"
+
+# Set up devdawg.
+source <(COMPLETE=zsh devdawg)
+
+# Set up zoxide.
+eval "$(zoxide init zsh)"
