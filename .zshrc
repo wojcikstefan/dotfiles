@@ -94,3 +94,6 @@ source <(COMPLETE=zsh devdawg)
 
 # Set up zoxide.
 eval "$(zoxide init zsh)"
+
+# Set up fzf.
+source <(fzf --zsh)
