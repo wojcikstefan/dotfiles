@@ -45,6 +45,7 @@ alias glg="git log"
 
 # Set up zoxide so that I can use `z` as a smarter `cd` command.
 eval "$(zoxide init zsh)"
+alias cd="z"
 
 # Set up fzf for quick fuzzy search.
 source <(fzf --zsh)
