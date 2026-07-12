@@ -8,3 +8,9 @@
 - Prefer all comments and docstrings should be in plain English. Do not
   reference code within comments and docstrings unless strictly necessary.
 - Skip obvious comments or docstrings – explain the non-obvious "why" only.
+- When writing multi-line docstrings, always leave the first like empty. That
+  is, instead of `"""Summary line` do:
+    ```
+    """
+    Summary line
+    ```
