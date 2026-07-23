@@ -14,3 +14,5 @@
     """
     Summary line
     ```
+- Do not EVER prefix constants with `_`, even if they're only relevant to a
+  single file.
