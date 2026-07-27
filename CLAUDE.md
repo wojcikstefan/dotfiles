@@ -24,8 +24,9 @@
   single file.
 
 
-## Pull Requests
+## Pull Requests & Committs
 
+- Do not ever add a "Co-Authored-By" in the commit message.
 - If you're creating a Pull Request that's gonna close an Issue, say "Closes
   ISSUE_ID". If you're only making progress on the Issue, say "Part of
   ISSUE_ID". Never say "Ref".
