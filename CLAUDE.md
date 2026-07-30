@@ -25,6 +25,10 @@
 - Do not add a constant to the top of the file if it's only used in a single
   spot. This only creates indirection and hurts readability without any
   benefits.
+- When asserting on a boolean value in tests, do NOT write `assert xyz` or
+  `assert not xyz`. Instead, write `assert xyz is True` or `assert xyz is
+  False`. This is more precise and ensures an unexpected truthy/falsy object
+  is not gonna sneak through.
 
 ## Pull Requests & Committs
 
