@@ -22,6 +22,9 @@
     ```
 - Do not EVER prefix constants with `_`, even if they're only relevant to a
   single file.
+- Do not add a constant to the top of the file if it's only used in a single
+  spot. This only creates indirection and hurts readability without any
+  benefits.
 
 ## Pull Requests & Committs
 
