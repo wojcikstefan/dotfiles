@@ -11,20 +11,26 @@
 
 ## Code
 
-- Prefer all comments and docstrings should be in plain English. Do not
-  reference code within comments and docstrings unless strictly necessary.
-- Skip obvious comments or docstrings – explain the non-obvious "why" only.
+- All comments and docstrings should be in plain English. Do not reference code
+  within comments and docstrings unless strictly necessary. Do not ever include
+  line numbers in prose.
+- Skip obvious comments or docstrings – only explain the non-obvious "why".
+- Do not prefix constants with `_`, even if they're only relevant to a single
+  file.
+- Do not add a constant to the top of the file if it's only used in a single
+  spot. This only creates indirection and hurts readability without any
+  benefits.
+- Do not inline imports unless you have empirical proof that a top-level import
+  doesn't work.
+
+## Tests
+
 - When writing multi-line docstrings, always leave the first like empty. That
   is, instead of `"""Summary line` do:
     ```
     """
     Summary line
     ```
-- Do not EVER prefix constants with `_`, even if they're only relevant to a
-  single file.
-- Do not add a constant to the top of the file if it's only used in a single
-  spot. This only creates indirection and hurts readability without any
-  benefits.
 - When asserting on a boolean value in tests, do NOT write `assert xyz` or
   `assert not xyz`. Instead, write `assert xyz is True` or `assert xyz is
   False`. This is more precise and ensures an unexpected truthy/falsy object
@@ -38,8 +44,5 @@
   ISSUE_ID". Never say "Ref".
 - Include the complete link to an Issue you're closing/part of. That means,
   in Linear, "[TEAM-XYZ](https://linear.app/{org}/issue/{issue_id})".
-
-## GitHub
-
 - Prefer the GitHub CLI (invoked via `gh`) to interact with GitHub (e.g.
   access/create issues or pull requests).
