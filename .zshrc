@@ -37,7 +37,9 @@ alias dc="docker-compose"
 alias cc="claude"
 
 # I execute devdawg commands often. Might as well use "dg" for short.
+# I'm also adding "dh" because I make this typo way too often.
 alias dg=devdawg
+alias dh=devdawg
 
 # Aliases for most common (and easiest to mis-type) git commands.
 alias gd="git diff"
